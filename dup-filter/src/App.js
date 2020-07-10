@@ -6,8 +6,10 @@ function App() {
   // State declaration for the current CSV file
   const [file, setFile] = useState(csvfile);
 
-  // State declaration for the unfiltered parsed list
+  // State declaration for the unfiltered parsed list, filtered list, and duplicate list
   const [original, setOriginal] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [removed, setRemoved] = useState([]);
 
   // Parsing CSV file through useEffect just in case anything
   // changes on re-render
@@ -30,9 +32,23 @@ function App() {
 
   return (
     <div className="mainApp">
-      {original.map((person, i) => {
-        return <h1>{person["first_name"]}</h1>;
-      })}
+      <div className="columns">
+        <div className="people">
+          {original.map((person, i) => {
+            return <h1>{person["first_name"]}</h1>;
+          })}
+        </div>
+        <div className="people">
+          {filtered.map((person, i) => {
+            return <h1>{person["first_name"]}</h1>;
+          })}
+        </div>
+        <div className="people">
+          {removed.map((person, i) => {
+            return <h1>{person["first_name"]}</h1>;
+          })}
+        </div>
+      </div>
     </div>
   );
 }
