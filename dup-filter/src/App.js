@@ -8,6 +8,8 @@ import doubleMetaphone from "double-metaphone";
 import levenshtein from "levenshtein-edit-distance";
 // Styling
 import "./styling/main.scss";
+// Logo
+import logo from "./img/validity-vector-logo.png";
 
 // This components renders each instance of a user/person in a list
 import Person from "./components/Person.jsx";
@@ -97,6 +99,7 @@ function App() {
 
   return (
     <div className="mainApp">
+      <img src={logo} alt="logo" />
       <div className="title">
         <h1>React</h1>
         <h2>Fuzzy Duplicate</h2>
@@ -113,6 +116,7 @@ function App() {
       <div className="columns">
         <div className="people">
           <h2>Original List</h2>
+          <h3>{original.length} Entries</h3>
           {original.map((person, i) => {
             if (removed.includes(person)) {
               return (
@@ -137,6 +141,7 @@ function App() {
         </div>
         <div className="people">
           <h2>Filtered List</h2>
+          <h3>{filtered.length} Entries</h3>
           {filtered.map((person, i) => {
             return (
               <Person
@@ -150,6 +155,7 @@ function App() {
         </div>
         <div className="people">
           <h2>Removed Duplicates</h2>
+          <h3>{removed.length} Entries</h3>
           {removed.map((person, i) => {
             return (
               <Person

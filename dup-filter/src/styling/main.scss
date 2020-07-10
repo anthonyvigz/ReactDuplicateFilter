@@ -27,6 +27,15 @@
         margin-bottom: 10px;
       }
 
+      h3 {
+        padding: 0;
+        font-size: 0.7em;
+        margin: 0 auto;
+        margin-top: -6px;
+        margin-bottom: 3px;
+        color: rgb(111, 0, 255);
+      }
+
       // each user/erson instance block
       .userBlock {
         display: flex;
@@ -233,5 +242,14 @@
     border: solid rgb(246, 123, 123) 3px;
     transition: 0.5s;
     opacity: 0.8;
+  }
+
+  // validity logo
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    padding: 15px;
   }
 }
