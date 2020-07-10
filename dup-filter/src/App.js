@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import csvfile from "./testFiles/normal.csv";
 import csvadvancedfile from "./testFiles/advanced.csv";
 import Papa from "papaparse";
+import doubleMetaphone from "double-metaphone";
+import levenshtein from "levenshtein-edit-distance";
 
 function App() {
   // State declaration for the current CSV file
@@ -31,8 +33,47 @@ function App() {
 
   console.log(original);
 
+  // Fuzzy filter duplicate algorithm
+  const filterDuplicates = () => {
+    // Copies of original array to compare items
+    const list1 = [...original];
+    const list2 = [...original];
+    // Empty array to fill with removed duplicates
+    const list3 = [];
+
+    // Map through each cloned array to compare each item/person
+    list1.map((person, i) => {
+      list2.map((check, j) => {
+        // This condition utilizes the levenshtein library.
+        // If the two compared indexes are within 1 or less
+        // for a levenshtein distance, it's a duplicate
+        // The second condition assures the index it is referring to
+        // is not itself
+        if (
+          levenshtein(person["last_name"], check["last_name"]) <= 1 &&
+          i != j
+        ) {
+          // Add the duplicate to the duplicate list
+          list3.push(list1[j]);
+          // Remove the duplicate from both lists so
+          // the indexes stay consistent and won't be compared again
+          list1.splice(j, 1);
+          list2.splice(j, 1);
+          // If condition isn't met, pass
+        } else {
+          return null;
+        }
+      });
+    });
+    // Update filtered list state
+    setFiltered(list1);
+    // Update duplicate list state
+    setRemoved(list3);
+  };
+
   return (
     <div className="mainApp">
+      <button onClick={() => filterDuplicates()}>FILTER</button>
       <div className="columns">
         <div className="people">
           {original.map((person, i) => {
