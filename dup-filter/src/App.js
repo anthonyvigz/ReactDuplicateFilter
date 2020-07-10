@@ -91,17 +91,17 @@ function App() {
       <div className="columns">
         <div className="people">
           {original.map((person, i) => {
-            return <Person key={i} person={person} />;
+            return <Person key={i} color="#5e63e4" person={person} />;
           })}
         </div>
         <div className="people">
           {filtered.map((person, i) => {
-            return <Person key={i} person={person} />;
+            return <Person key={i} color="#1cbd44" person={person} />;
           })}
         </div>
         <div className="people">
           {removed.map((person, i) => {
-            return <Person key={i} person={person} />;
+            return <Person key={i} color="#b13939" person={person} />;
           })}
         </div>
       </div>
