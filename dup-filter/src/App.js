@@ -13,7 +13,6 @@ import logo from "./img/validity-vector-logo.png";
 
 // This components renders each instance of a user/person in a list
 import Person from "./components/Person.jsx";
-
 function App() {
   // State declaration for the current CSV file
   const [file, setFile] = useState(csvadvancedfile);
@@ -25,6 +24,9 @@ function App() {
 
   // State declaration for transitioning state
   const [transition, setTransition] = useState(false);
+
+  // State declaration of JSON array display
+  const [json, showJson] = useState(false);
 
   // Parsing CSV file through useEffect just in case anything
   // changes on re-render
