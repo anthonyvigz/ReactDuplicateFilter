@@ -78,6 +78,12 @@ function App() {
     setRemoved(list3);
   };
 
+  // This function resets the filtered and removed arrays to empty
+  const reset = () => {
+    setFiltered([]);
+    setRemoved([]);
+  };
+
   return (
     <div className="mainApp">
       <div className="title">
@@ -87,7 +93,12 @@ function App() {
         <h4>Validity Assessment</h4>
         <h4>Anthony Vigliotta</h4>
       </div>
-      <button onClick={() => filterDuplicates()}>FILTER</button>
+      <button id="filter" onClick={() => filterDuplicates()}>
+        FILTER
+      </button>
+      <button id="reset" onClick={() => reset()}>
+        RESET
+      </button>
       <div className="columns">
         <div className="people">
           {original.map((person, i) => {

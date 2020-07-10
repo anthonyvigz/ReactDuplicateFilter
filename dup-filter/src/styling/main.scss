@@ -8,5 +8,18 @@
     display: flex;
     width: 100%;
     justify-content: center;
+
+    .people {
+      .userBlock {
+        display: flex;
+        border-radius: 5px;
+        margin-bottom: 8px;
+        padding: 5px;
+        transition: 0.5s;
+        cursor: pointer;
+        transition: 0.5s;
+        box-shadow: 0 8px 6px -6px rgb(82, 82, 82);
+      }
+    }
   }
 }

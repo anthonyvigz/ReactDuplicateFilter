@@ -4,7 +4,9 @@ import React, { useState } from "react";
 export default function Person(props) {
   return (
     <div className="userBlock" style={{ background: props.color }}>
-      {props.person["id"]} {props.person["last_name"]}
+      <h1>{props.person["id"]}</h1>
+      <h1>{props.person["first_name"]}</h1>
+      <h1>{props.person["last_name"]}</h1>
     </div>
   );
 }
