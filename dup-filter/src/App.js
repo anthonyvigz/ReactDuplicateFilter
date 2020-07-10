@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import csvfile from "./testFiles/normal.csv";
 import csvadvancedfile from "./testFiles/advanced.csv";
 // Parser
 import Papa from "papaparse";
@@ -25,9 +24,6 @@ function App() {
   // State declaration for transitioning state
   const [transition, setTransition] = useState(false);
 
-  // State declaration of JSON array display
-  const [json, showJson] = useState(false);
-
   // Parsing CSV file through useEffect just in case anything
   // changes on re-render
   useEffect(() => {
@@ -43,7 +39,7 @@ function App() {
       setOriginal(original); // sets the JSON array to our state for the app
     }
     getData();
-  }, []);
+  }, [file]);
 
   console.log(original);
 
@@ -65,7 +61,7 @@ function App() {
         // is not itself
         if (
           levenshtein(person["last_name"], check["last_name"]) <= 1 &&
-          i != j
+          i !== j
         ) {
           // Add the duplicate to the duplicate list
           list3.push(list1[j]);
@@ -84,6 +80,7 @@ function App() {
     // Update duplicate list state
     setRemoved(list3);
     // Delays the transition so re-render can take place
+
     setTimeout(() => {
       setTransition(true);
     }, 300);
