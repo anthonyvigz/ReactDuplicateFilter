@@ -38,4 +38,83 @@
       }
     }
   }
+
+  // title styling
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #5e63e4;
+
+    h1 {
+      margin: 0;
+      margin-bottom: -15px;
+      padding: 0;
+      font-size: 3.6em;
+    }
+
+    h2 {
+      margin: 0;
+      padding: 0;
+      font-size: 1.2em;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 0;
+      font-size: 3.7em;
+      margin-top: -19px;
+    }
+
+    h4 {
+      margin: 0;
+      padding: 0;
+      font-size: 0.7em;
+    }
+  }
+
+  // filter button
+  #filter {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: rgb(75, 159, 255);
+    color: white;
+    border: solid rgb(75, 159, 255) 3px;
+    border-radius: 3px;
+    padding: 5px 15px;
+    margin-top: 15px;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    transition: 0.5s;
+  }
+
+  #filter:hover {
+    border: solid rgb(144, 238, 238) 3px;
+    transition: 0.5s;
+    opacity: 0.8;
+  }
+
+  // reset button
+  #reset {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: red;
+    color: white;
+    border: solid red 3px;
+    border-radius: 3px;
+    padding: 3px 10px;
+    margin-top: 15px;
+    font-size: 0.5em;
+    letter-spacing: 1px;
+    transition: 0.5s;
+  }
+
+  #reset:hover {
+    border: solid rgb(246, 123, 123) 3px;
+    transition: 0.5s;
+    opacity: 0.8;
+  }
 }
