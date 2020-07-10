@@ -5,6 +5,9 @@ import Papa from "papaparse";
 import doubleMetaphone from "double-metaphone";
 import levenshtein from "levenshtein-edit-distance";
 
+// This components renders each instance of a user/person in a list
+import Person from "./components/Person.jsx";
+
 function App() {
   // State declaration for the current CSV file
   const [file, setFile] = useState(csvadvancedfile);
@@ -77,17 +80,17 @@ function App() {
       <div className="columns">
         <div className="people">
           {original.map((person, i) => {
-            return <h1>{person["first_name"]}</h1>;
+            return <Person key={i} person={person} />;
           })}
         </div>
         <div className="people">
           {filtered.map((person, i) => {
-            return <h1>{person["first_name"]}</h1>;
+            return <Person key={i} person={person} />;
           })}
         </div>
         <div className="people">
           {removed.map((person, i) => {
-            return <h1>{person["first_name"]}</h1>;
+            return <Person key={i} person={person} />;
           })}
         </div>
       </div>
