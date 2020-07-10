@@ -10,6 +10,15 @@
     justify-content: center;
 
     .people {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      overflow-y: auto;
+      margin-top: 100px;
+      margin: 25px;
+      width: 202px;
+      transition: 0.5s;
+
       .userBlock {
         display: flex;
         border-radius: 5px;
@@ -19,6 +28,13 @@
         cursor: pointer;
         transition: 0.5s;
         box-shadow: 0 8px 6px -6px rgb(82, 82, 82);
+
+        h1 {
+          color: white;
+          font-size: 1em;
+          margin: 4px;
+          padding: 0;
+        }
       }
     }
   }
