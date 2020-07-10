@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import csvfile from "./testFiles/normal.csv";
+import csvadvancedfile from "./testFiles/advanced.csv";
 import Papa from "papaparse";
 
 function App() {
   // State declaration for the current CSV file
-  const [file, setFile] = useState(csvfile);
+  const [file, setFile] = useState(csvadvancedfile);
 
   // State declaration for the unfiltered parsed list, filtered list, and duplicate list
   const [original, setOriginal] = useState([]);
