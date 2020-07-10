@@ -21,6 +21,9 @@ function App() {
   const [filtered, setFiltered] = useState([]);
   const [removed, setRemoved] = useState([]);
 
+  // State declaration for transitioning state
+  const [transition, setTransition] = useState(false);
+
   // Parsing CSV file through useEffect just in case anything
   // changes on re-render
   useEffect(() => {
@@ -76,12 +79,20 @@ function App() {
     setFiltered(list1);
     // Update duplicate list state
     setRemoved(list3);
+    // Delays the transition so re-render can take place
+    setTimeout(() => {
+      setTransition(true);
+    }, 300);
   };
 
   // This function resets the filtered and removed arrays to empty
   const reset = () => {
-    setFiltered([]);
-    setRemoved([]);
+    setTransition(false);
+    // Delay so transition can take place
+    setTimeout(() => {
+      setFiltered([]);
+      setRemoved([]);
+    }, 300);
   };
 
   return (
@@ -101,18 +112,53 @@ function App() {
       </button>
       <div className="columns">
         <div className="people">
+          <h2>Original List</h2>
           {original.map((person, i) => {
-            return <Person key={i} color="#5e63e4" person={person} />;
+            if (removed.includes(person)) {
+              return (
+                <Person
+                  key={i}
+                  color="#b13939"
+                  person={person}
+                  transition={true}
+                />
+              );
+            } else {
+              return (
+                <Person
+                  key={i}
+                  color="#5e63e4"
+                  transition={true}
+                  person={person}
+                />
+              );
+            }
           })}
         </div>
         <div className="people">
+          <h2>Filtered List</h2>
           {filtered.map((person, i) => {
-            return <Person key={i} color="#1cbd44" person={person} />;
+            return (
+              <Person
+                key={i}
+                transition={transition}
+                color="#1cbd44"
+                person={person}
+              />
+            );
           })}
         </div>
         <div className="people">
+          <h2>Removed Duplicates</h2>
           {removed.map((person, i) => {
-            return <Person key={i} color="#b13939" person={person} />;
+            return (
+              <Person
+                key={i}
+                transition={transition}
+                color="#b13939"
+                person={person}
+              />
+            );
           })}
         </div>
       </div>

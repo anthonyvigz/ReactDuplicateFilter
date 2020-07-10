@@ -9,7 +9,7 @@ export default function Person(props) {
   return (
     <div
       onClick={() => showModal(!modal)}
-      className="userBlock"
+      className={props.transition ? "userBlock" : "userBlock hide"}
       style={{ background: props.color }}
     >
       <h1>{props.person["id"]}</h1>

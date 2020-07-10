@@ -19,6 +19,15 @@
       width: 202px;
       transition: 0.5s;
 
+      // list title
+      h2 {
+        font-size: 1em;
+        color: rgba(0, 0, 0, 0.671);
+        margin: 0 auto;
+        margin-bottom: 10px;
+      }
+
+      // each user/erson instance block
       .userBlock {
         display: flex;
         border-radius: 5px;
@@ -133,6 +142,16 @@
             }
           }
         }
+      }
+
+      .userBlock.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .userBlock:hover {
+        box-shadow: none;
+        transition: 0.5s;
       }
     }
   }
