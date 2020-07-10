@@ -70,6 +70,68 @@
           -webkit-transition: 0.5s;
           overflow: auto;
           transition: all 0.3s linear;
+
+          .modalBlock {
+            width: 400px;
+            background: #161731;
+            border: solid rgba(255, 255, 255, 0.671) 3px;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 10px 10px 52px -4px rgba(0, 0, 0, 0.75);
+
+            h1 {
+              margin: 0;
+              padding: 0;
+            }
+
+            #idtext {
+              font-size: 2.5em;
+            }
+
+            #nametext {
+              font-size: 2em;
+              background: #3234698f;
+              padding: 5px 15px;
+              border-radius: 3px;
+            }
+
+            #companytext {
+              font-size: 1.4em;
+              padding: 5px;
+            }
+
+            #emailtext {
+              font-size: 1.1em;
+              padding: 5px;
+            }
+
+            .address {
+              background: #4d50a0;
+              color: white;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              justify-content: center;
+              width: 100%;
+              margin: 5px;
+              padding: 5px 0;
+
+              h1 {
+                margin: 0;
+                padding: 0;
+              }
+            }
+
+            #phonetext {
+              padding: 5px;
+              margin: 5px;
+            }
+          }
         }
       }
     }
