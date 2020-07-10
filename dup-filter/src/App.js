@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import csvfile from "./testFiles/normal.csv";
 import csvadvancedfile from "./testFiles/advanced.csv";
+// Parser
 import Papa from "papaparse";
+// Fuzzy duplicate algorithms
 import doubleMetaphone from "double-metaphone";
 import levenshtein from "levenshtein-edit-distance";
+// Styling
+import "./styling/main.scss";
 
 // This components renders each instance of a user/person in a list
 import Person from "./components/Person.jsx";
@@ -76,6 +80,13 @@ function App() {
 
   return (
     <div className="mainApp">
+      <div className="title">
+        <h1>React</h1>
+        <h2>Fuzzy Duplicate</h2>
+        <h3>Filter</h3>
+        <h4>Validity Assessment</h4>
+        <h4>Anthony Vigliotta</h4>
+      </div>
       <button onClick={() => filterDuplicates()}>FILTER</button>
       <div className="columns">
         <div className="people">
