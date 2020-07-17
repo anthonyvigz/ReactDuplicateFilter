@@ -14,6 +14,6 @@ and filtered array and displayed as well once the filter occurs.
 
 The filter also has the option of checking each key, value pair of each instance; this was also deemed unnecessary as all the duplicates were found using only the last_name key.
 
-The filter succeeds in filtered in the advanced CSV list as it shows every ID number in order, omitting ID 29 as it did not originally exist.
+The filter succeeds in filtering the advanced CSV list as it shows every ID number in order, omitting ID 29 as it did not originally exist.
 
 -Anthony Vigliotta
